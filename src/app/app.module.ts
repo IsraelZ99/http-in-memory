@@ -17,7 +17,9 @@ import { ListComponent } from './components/list/list.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      put204: false
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

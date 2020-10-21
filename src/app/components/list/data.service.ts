@@ -14,4 +14,18 @@ export class DataService {
   getAllCities(): Observable<CityI[]> {
     return this.http.get<CityI[]>(this.urlAPI);
   }
+
+  addNewCity(city: CityI): Observable<CityI> {
+    return this.http.post<CityI>(this.urlAPI, city);
+  }
+
+  updateCities(city: CityI): Observable<CityI> {
+    return this.http.put<CityI>(this.urlAPI, city);
+  }
+
+  deleteCity(id: string): Observable<{}> {
+    this.urlAPI = `${this.urlAPI}/${id}`;
+    return this.http.delete(this.urlAPI);
+  }
+
 }
